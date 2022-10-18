@@ -2,7 +2,7 @@
   <a-layout class="layout-container">
     <a-layout-sider v-model:collapsed="collapsed" :trigger="null" collapsible>
       <div class="logo">{{ collapsed ? 'logo' : '管理系统' }}</div>
-      <Menu />
+      <Menu/>
     </a-layout-sider>
     <a-layout>
       <a-layout-header class="layout-header" style="background: #fff; padding: 0;height: auto">
@@ -55,7 +55,10 @@ const collapsed = ref(false)
 onMounted(async () => {
   const userInfo = await getUserInfo()
   if (userInfo.status === 0) {
-    userStore.userInfo = userInfo.data
+    // userStore.userInfo = userInfo.data
+    userStore.$patch({
+      userInfo: userInfo.data
+    })
   }
 })
 

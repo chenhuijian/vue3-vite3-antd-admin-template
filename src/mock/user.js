@@ -62,7 +62,19 @@ export default [
             name: '首页',
             menuIcon: 'HomeOutlined',
             menuUrl: '/home',
-            value: 'Home'
+            value: 'Home',
+            button:[
+              {
+                id:2,
+                name:'导出',
+                value:'export'
+              },
+              {
+                id:3,
+                name:'分配',
+                value:'allocation'
+              },
+            ]
           }
         ],
         msg: null

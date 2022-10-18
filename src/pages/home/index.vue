@@ -114,9 +114,10 @@
         />
       </template>
       <template v-if="column.key === 'action'">
-        <a-button type="link">企业管理</a-button>
-        <a-divider type="vertical"/>
-        <a-button type="link">统计</a-button>
+        <a-space>
+          <a-button type="link" v-permission="'Home:export'">企业管理</a-button>
+          <a-button type="link" v-permission="'Home:allocation'">统计</a-button>
+        </a-space>
       </template>
     </template>
 
@@ -143,51 +144,60 @@ const columns = [
   {
     title: '企业简称',
     dataIndex: 'shortName',
-    key: 'shortName'
+    key: 'shortName',
+    align: 'center'
   },
   {
     title: '企业全称',
     dataIndex: 'fullName',
-    key: 'fullName'
+    key: 'fullName',
+    align: 'center'
   },
   {
     title: '签约状态',
     dataIndex: 'signingStatus',
     key: 'signingStatus',
+    align: 'center',
     customRender: ({ text }) => text === 0 ? '未签约' : text === 1 ? '已签约' : '---'
   },
   {
     title: '服务到期时间',
     dataIndex: 'serviceTime',
-    key: 'serviceTime'
+    key: 'serviceTime',
+    align: 'center'
   },
   {
     title: '到期状态',
     dataIndex: 'expireStatus',
     key: 'expireStatus',
+    align: 'center',
     customRender: ({ text }) => text === 0 ? '即将到期' : text === 1 ? '服务中' : text === 2 ? '已到期' : '---'
   },
   {
     title: '企业用途',
     dataIndex: 'enterpriseUse',
     key: 'enterpriseUse',
+    align: 'center',
     customRender: ({ text }) => text === 0 ? '自用型' : text === 1 ? '服务型' : '---'
   },
   {
     title: '是否控制项目',
     dataIndex: 'controlProject',
     key: 'controlProject',
+    align: 'center',
     customRender: ({ text }) => text === 0 ? '控制' : text === 1 ? '不控制' : '---'
   },
   {
     title: '企业联系人',
     dataIndex: 'name',
-    key: 'name'
+    key: 'name',
+    align: 'center'
   },
   {
     title: '企业联系人方式',
     dataIndex: 'phoneNumber',
-    key: 'phoneNumber'
+    key: 'phoneNumber',
+    align: 'center'
   },
   {
     title: '操作',

@@ -9,7 +9,7 @@
     @openChange="onOpenChange"
   >
     <menu-item
-      v-for="menu of menusStore.munes"
+      v-for="menu of menusStore.menus"
       :key="menu.menuUrl"
       :item="menu"
     ></menu-item>
@@ -28,16 +28,18 @@ const router = useRouter()
 const route = useRoute()
 const menusStore = useMenusStore()
 onMounted(async () => {
-  const { status, data } = await getMenuList()
-  if (status === 0) {
-    menusStore.munes = data
-  }
-  console.log(data)
+  menusStore.getMenuList()
+  // const { status, data } = await getMenuList()
+  // if (status === 0) {
+  //   menusStore.munes = data
+  // }
+  // console.log(data)
   // if(!store.getters.auth.menus.length){
   // await store.dispatch('auth/menus')
   // await store.dispatch('auth/loginInfo')
   // }
 })
+
 
 const activeRoute = computed(() => route.meta.activeMenu ? [route.meta.activeMenu] : [route.path])
 
