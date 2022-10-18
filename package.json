@@ -1,0 +1,31 @@
+{
+  "name": "vue3-vite3-antd-admin-template",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "dev:mock": "cross-env USE_MOCK=true vite",
+    "build": "vite build",
+    "build:mock": "cross-env USE_PRO_MOCK=true vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "ant-design-vue": "^3.2.13",
+    "axios": "^1.1.2",
+    "js-cookie": "^3.0.1",
+    "pinia": "^2.0.23",
+    "qs": "^6.11.0",
+    "vue": "^3.2.37",
+    "vue-router": "^4.1.5"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^3.1.0",
+    "cross-env": "^7.0.3",
+    "mockjs": "^1.1.0",
+    "sass": "^1.55.0",
+    "unplugin-vue-components": "^0.22.8",
+    "vite": "^3.1.0",
+    "vite-plugin-mock": "^2.9.6"
+  }
+}
